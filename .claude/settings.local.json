@@ -1,0 +1,11 @@
+{
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "archcore"
+  ],
+  "permissions": {
+    "allow": [
+      "mcp__archcore__create_document"
+    ]
+  }
+}
