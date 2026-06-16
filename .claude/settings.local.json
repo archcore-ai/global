@@ -1,11 +1,15 @@
 {
+  "permissions": {
+    "allow": [
+      "mcp__archcore__list_documents",
+      "mcp__archcore__create_document",
+      "mcp__archcore__add_relation",
+      "mcp__archcore__remove_document",
+      "mcp__archcore__update_document"
+    ]
+  },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "archcore"
-  ],
-  "permissions": {
-    "allow": [
-      "mcp__archcore__create_document"
-    ]
-  }
+  ]
 }

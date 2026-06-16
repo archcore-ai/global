@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "files": {},
+  "relations": [
+    {
+      "source": "concepts/core-concepts.doc.md",
+      "target": "product/what-is-archcore.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/messaging-and-voice.rule.md",
+      "target": "architecture/one-product-two-entry-points.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/messaging-and-voice.rule.md",
+      "target": "product/what-is-archcore.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/design-principles.doc.md",
+      "target": "product/what-is-archcore.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/positioning-vs-alternatives.doc.md",
+      "target": "product/what-is-archcore.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/audience-and-personas.doc.md",
+      "target": "product/what-is-archcore.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "architecture/conceptual-architecture.doc.md",
+      "target": "product/what-is-archcore.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "architecture/one-product-two-entry-points.adr.md",
+      "target": "architecture/conceptual-architecture.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/messaging-and-voice.rule.md",
+      "target": "product/positioning-vs-alternatives.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/glossary.doc.md",
+      "target": "concepts/core-concepts.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/document-tracks.doc.md",
+      "target": "concepts/core-concepts.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/agent-workflow.doc.md",
+      "target": "concepts/core-concepts.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/agent-workflow.doc.md",
+      "target": "architecture/conceptual-architecture.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/positioning-vs-alternatives.doc.md",
+      "target": "product/design-principles.doc.md",
+      "type": "related"
+    }
+  ]
+}
