@@ -7,6 +7,8 @@ status: accepted
 
 Tracks are recommended multi-document flows. Most work doesn't need a single document in isolation — it moves from intent to decision to implementation, and the documents link into a chain. A track names that chain so the path is repeatable.
 
+For picking the right *type* at each step, see `concepts/document-types-reference`; for the Sources-vs-Specifications layering that the requirements tracks rest on, see `concepts/requirements-layers`.
+
 ## The tracks
 
 **Product** — `idea → prd → plan`. Explore a concept, define what to build, then plan the work. The lightweight default for features.
@@ -22,6 +24,8 @@ Tracks are recommended multi-document flows. Most work doesn't need a single doc
 ## How they connect
 
 Documents in a track are wired with relations — typically `implements` and `depends_on` — so an agent loading the last document can walk back to the rationale behind it. Tracks are guidance, not gates: use the lightweight ones by default and the formal ones only when the rigor is warranted.
+
+The Sources and ISO tracks are two **layers**, not rivals: sources discover requirements informally; ISO specs formalize them. They are linked `spec implements source` (e.g. `brs implements brd`). PRD is a pragmatic hybrid that can stand in for the full ISO cascade — see `concepts/requirements-layers`.
 
 ## Natural overall flow
 

@@ -5,7 +5,20 @@
       "mcp__archcore__create_document",
       "mcp__archcore__add_relation",
       "mcp__archcore__remove_document",
-      "mcp__archcore__update_document"
+      "mcp__archcore__update_document",
+      "Read(//Users/ivklgn/Documents/archcore/cli/**)",
+      "Read(//Users/ivklgn/Documents/archcore/cli/.claude/rules/**)",
+      "Read(//Users/ivklgn/Documents/archcore/docs/.claude/rules/**)",
+      "Read(//Users/ivklgn/Documents/archcore/**)",
+      "Bash(grep -rilE \"positioning|messaging|tagline|value prop|git-native|context engineering\" plugin/.archcore/)",
+      "Bash(grep -rilE \"positioning|messaging|tagline|value prop|git-native|context engineering\" docs/.archcore/)",
+      "Bash(cat)",
+      "Bash(perl -i -pe 's/\\\\QThis document is the authoritative registry.\\\\E/The canonical, tool-agnostic host roster lives in the `archcore` global source \\(`architecture\\\\/supported-ai-hosts`\\); this document is the CLI'\"'\"'s per-host integration reference \\\\x28config paths, hook formats, detection, and the add-an-agent recipe\\\\x29./' 'cli/.archcore/integrations/supported-ai-agents.doc.md')",
+      "mcp__archcore__get_document",
+      "Bash(grep -n \"product-positioning\\\\|marketing\" cli/.archcore/.sync-state.json)",
+      "Bash(echo \"[exit $?]\")",
+      "Bash(grep -c \"source\" cli/.archcore/.sync-state.json)",
+      "Bash(bash *)"
     ]
   },
   "enableAllProjectMcpServers": true,

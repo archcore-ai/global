@@ -71,6 +71,46 @@
       "source": "product/positioning-vs-alternatives.doc.md",
       "target": "product/design-principles.doc.md",
       "type": "related"
+    },
+    {
+      "source": "architecture/supported-ai-hosts.doc.md",
+      "target": "architecture/one-product-two-entry-points.adr.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/global-sources.doc.md",
+      "target": "architecture/conceptual-architecture.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/document-types-reference.doc.md",
+      "target": "concepts/core-concepts.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/requirements-layers.doc.md",
+      "target": "concepts/document-types-reference.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/requirements-layers.doc.md",
+      "target": "concepts/document-tracks.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "web/og-image-generation.guide.md",
+      "target": "web/static-hosting-github-pages.adr.md",
+      "type": "related"
+    },
+    {
+      "source": "web/build-time-og-images.task-type.md",
+      "target": "web/og-image-generation.guide.md",
+      "type": "implements"
+    },
+    {
+      "source": "product/messaging-playbook.rule.md",
+      "target": "product/messaging-and-voice.rule.md",
+      "type": "related"
     }
   ]
 }
