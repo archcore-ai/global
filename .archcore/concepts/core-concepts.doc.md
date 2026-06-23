@@ -27,7 +27,7 @@ Categories are *derived from the document type*, not from directories:
 
 ## Document types (18)
 
-**Knowledge** — `adr` (final decision), `rfc` (open proposal), `rule` (team standard), `guide` (step-by-step), `doc` (reference material), `spec` (normative contract).
+**Knowledge** — `adr` (final decision), `rfc` (open proposal), `rule` (team standard), `guide` (step-by-step), `doc` (reference material), `spec` (boundary contract).
 
 **Vision** — `prd` (product requirements), `idea` (concept to explore), `plan` (phased tasks); *sources track*: `mrd` (market), `brd` (business), `urd` (user); *ISO 29148 track*: `brs → strs → syrs → srs` (formal requirements cascade).
 

@@ -46,7 +46,7 @@ Decomposes through progressively detailed levels: BRS → StRS → SyRS → SRS.
 | `rfc` | A proposal open for review before a decision is made |
 | `rule` | A mandatory standard — imperative statements with good/bad examples |
 | `guide` | Step-by-step instructions for completing a task |
-| `spec` | Canonical normative contract — behavior, constraints, invariants, conformance for a specific technical boundary |
+| `spec` | Contract of a depended-on boundary — behavior, constraints, invariants, conformance for one API, interface, schema, or protocol; captured from existing code or specified ahead of it |
 | `doc` | Non-behavioral reference — tables, registries, glossaries, component lists |
 
 ## Experience types
@@ -61,9 +61,10 @@ Decomposes through progressively detailed levels: BRS → StRS → SyRS → SRS.
 - **rule vs doc** — rule prescribes behavior ("Always do X") with enforcement; doc describes what exists (tables, registries). Descriptive, non-behavioral → doc.
 - **adr vs rfc** — adr = decision already final; rfc = proposal open for feedback.
 - **guide vs doc** — guide has sequential steps to follow; doc is non-sequential reference to look up.
-- **spec vs doc** — spec defines a canonical normative contract for a concrete boundary (behavior, constraints, invariants, conformance); doc describes what exists without normative requirements.
+- **spec vs doc** — spec defines a canonical normative contract for a concrete boundary (behavior, constraints, invariants, conformance); doc describes what exists without normative requirements. When the subject is a boundary other code depends on (observable behavior, external consumers), prefer spec even if doc also fits — the doc links to the spec.
 - **spec vs rule** — spec is a technical contract for one component; rule is a cross-cutting team standard. Scoped to a named artifact → spec; applied team-wide → rule.
-- **spec vs adr** — spec is the living canonical truth (present-tense: "it works this way"); adr is the decision record (past-tense: "we chose this because"). Both may exist for one component.
+- **spec vs adr** — spec is the living canonical truth (present-tense: "it works this way"); adr is the decision record (past-tense: "we chose this because"). Both may exist for one component. A spec may be written after code (capture the existing contract) or before it (specify the contract to build).
+- **spec is not** — requirements (use `prd`/`syrs`), task breakdown (use `plan`), rationale (use `adr`), or non-normative reference (use `doc`). It covers only the contract of a boundary with external consumers.
 - **task-type vs guide** — task-type is a reusable pattern for a class of tasks; guide is instructions for a specific one-time procedure.
 - **cpat vs adr** — cpat focuses on a code pattern change with before/after; adr records a broader architectural decision with alternatives and consequences.
 - **mrd vs prd** — MRD analyzes the MARKET without proposing a solution; PRD proposes a PRODUCT with requirements.

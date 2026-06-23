@@ -111,6 +111,16 @@
       "source": "product/messaging-playbook.rule.md",
       "target": "product/messaging-and-voice.rule.md",
       "type": "related"
+    },
+    {
+      "source": "concepts/spec-boundary-contract-repositioning.rfc.md",
+      "target": "concepts/rnd-research-document-type.rfc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/spec-boundary-contract-repositioning.rfc.md",
+      "target": "concepts/document-types-reference.doc.md",
+      "type": "related"
     }
   ]
 }
