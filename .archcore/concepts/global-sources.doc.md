@@ -1,6 +1,9 @@
 ---
 title: "Global Sources (Shared Org-Wide Context)"
 status: accepted
+tags:
+  - "architecture"
+  - "concepts"
 ---
 
 ## Overview

@@ -1,6 +1,8 @@
 ---
 title: "Host Static Web Properties on GitHub Pages"
 status: accepted
+tags:
+  - "web"
 ---
 
 ## Context

@@ -1,6 +1,9 @@
 ---
 title: "Add Build-Time OG Image Generation to a Static Site"
 status: accepted
+tags:
+  - "og-images"
+  - "web"
 ---
 
 ## What

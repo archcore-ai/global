@@ -1,6 +1,9 @@
 ---
 title: "Reposition spec as a Bidirectional Boundary Contract"
 status: accepted
+tags:
+  - "concepts"
+  - "document-types"
 ---
 
 ## Summary

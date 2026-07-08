@@ -1,6 +1,9 @@
 ---
 title: "Glossary"
 status: accepted
+tags:
+  - "concepts"
+  - "vocabulary"
 ---
 
 ## Overview

@@ -1,6 +1,9 @@
 ---
 title: "Messaging, Voice & Positioning"
 status: accepted
+tags:
+  - "messaging"
+  - "product"
 ---
 
 ## Rule

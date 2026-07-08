@@ -1,6 +1,9 @@
 ---
 title: "One Product, Two Entry Points (Plugin and CLI)"
 status: accepted
+tags:
+  - "architecture"
+  - "product"
 ---
 
 ## Context

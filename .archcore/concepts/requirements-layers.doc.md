@@ -1,6 +1,9 @@
 ---
 title: "Requirements Layers: Sources vs Specifications"
 status: accepted
+tags:
+  - "concepts"
+  - "document-types"
 ---
 
 ## Overview

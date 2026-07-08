@@ -1,6 +1,9 @@
 ---
 title: "Build-Time OG Image Generation (Satori + resvg)"
 status: accepted
+tags:
+  - "og-images"
+  - "web"
 ---
 
 ## Overview

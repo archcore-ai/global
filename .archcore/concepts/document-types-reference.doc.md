@@ -1,11 +1,14 @@
 ---
 title: "Document Types Reference & Selection Guide"
 status: accepted
+tags:
+  - "concepts"
+  - "document-types"
 ---
 
 ## Overview
 
-The detailed per-type reference and the "choosing the right type" selection guide for Archcore's 18 document types. The high-level model (three virtual categories, `slug.type.md` naming, statuses, relations) lives in `concepts/core-concepts`; the multi-document flows in `concepts/document-tracks`; the Sources-vs-Specifications layering in `concepts/requirements-layers`. This document is the type-selection detail that all of those depend on. Category is derived from the type suffix, never from the directory.
+The detailed per-type reference and the "choosing the right type" selection guide for Archcore's 19 document types. The high-level model (three virtual categories, `slug.type.md` naming, statuses, relations) lives in `concepts/core-concepts`; the multi-document flows in `concepts/document-tracks`; the Sources-vs-Specifications layering in `concepts/requirements-layers`. This document is the type-selection detail that all of those depend on. Category is derived from the type suffix, never from the directory.
 
 ## Vision types
 
@@ -13,9 +16,10 @@ The detailed per-type reference and the "choosing the right type" selection guid
 
 | Type | Purpose |
 |------|---------|
-| `prd` | Product requirements — goals, scope, acceptance criteria |
+| `prd` | Product requirements — goals, scope, acceptance criteria. Covers one unit of product decision at any scale — a whole product or a single feature; size never changes type (a feature-scoped prd is the same sections, compressed; a product-level prd links its feature prds via relations) |
 | `idea` | A concept worth exploring — problem, value, rough approach |
 | `plan` | A concrete implementation plan with phased tasks |
+| `rnd` | Focused investigation that ends in a Recommendation (proceed / refine / defer / stop) and a Next Action — the optional research gate that precedes `idea`/`plan` |
 
 ### Sources track (discovery)
 
@@ -46,8 +50,12 @@ Decomposes through progressively detailed levels: BRS → StRS → SyRS → SRS.
 | `rfc` | A proposal open for review before a decision is made |
 | `rule` | A mandatory standard — imperative statements with good/bad examples |
 | `guide` | Step-by-step instructions for completing a task |
-| `spec` | Contract of a depended-on boundary — behavior, constraints, invariants, conformance for one API, interface, schema, or protocol; captured from existing code or specified ahead of it |
+| `spec` | Normative behavior contract of something others rely on — one boundary (API, interface, schema, protocol) or one feature/subsystem; captured from existing code or specified ahead of it |
 | `doc` | Non-behavioral reference — tables, registries, glossaries, component lists |
+
+### Spec format canon
+
+One form for every spec subject — six sections: **Purpose & Scope** (subject + who depends on it), **Surface** (interface and/or parts, states, field-drivers — referenced, never reproduced), **Normative Behavior**, **Constraints & Invariants**, **Failure Behavior**, **Conformance**. Numbered behavior lines follow EARS clause order with BCP 14 keywords as the modal — `WHEN <trigger>, the <subject> MUST <response>` (also WHILE / IF…THEN / ubiquitous forms); MUST/SHOULD/MAY graded per RFC 2119, uppercase per RFC 8174, MUST kept sparing. Legacy heading pair `Contract Surface` / `Error Handling` reads as `Surface` / `Failure Behavior` — existing specs stay valid; plain `X MUST Y` lines are valid EARS ubiquitous sentences.
 
 ## Experience types
 
@@ -61,10 +69,15 @@ Decomposes through progressively detailed levels: BRS → StRS → SyRS → SRS.
 - **rule vs doc** — rule prescribes behavior ("Always do X") with enforcement; doc describes what exists (tables, registries). Descriptive, non-behavioral → doc.
 - **adr vs rfc** — adr = decision already final; rfc = proposal open for feedback.
 - **guide vs doc** — guide has sequential steps to follow; doc is non-sequential reference to look up.
-- **spec vs doc** — spec defines a canonical normative contract for a concrete boundary (behavior, constraints, invariants, conformance); doc describes what exists without normative requirements. When the subject is a boundary other code depends on (observable behavior, external consumers), prefer spec even if doc also fits — the doc links to the spec.
+- **spec vs doc** — spec defines a canonical normative behavior contract for a concrete subject — a boundary or a feature/subsystem others rely on (behavior, constraints, invariants, conformance); doc describes what exists without normative requirements. When others depend on how the subject behaves (observable behavior, external consumers), prefer spec even if doc also fits — the doc links to the spec.
 - **spec vs rule** — spec is a technical contract for one component; rule is a cross-cutting team standard. Scoped to a named artifact → spec; applied team-wide → rule.
 - **spec vs adr** — spec is the living canonical truth (present-tense: "it works this way"); adr is the decision record (past-tense: "we chose this because"). Both may exist for one component. A spec may be written after code (capture the existing contract) or before it (specify the contract to build).
-- **spec is not** — requirements (use `prd`/`syrs`), task breakdown (use `plan`), rationale (use `adr`), or non-normative reference (use `doc`). It covers only the contract of a boundary with external consumers.
+- **spec vs prd** — the routing gate: if the document answers *what should we build and why* (user stories, priorities, success metrics), it is a prd (or ISO `syrs`/`srs`); if it answers *what behavior can consumers rely on right now*, it is a spec.
+- **spec is not** — requirements (use `prd`/`syrs`), task breakdown (use `plan`), rationale (use `adr`), or non-normative reference (use `doc`). It covers only normative behavior others rely on right now.
+- **rnd vs idea** — `idea` PROPOSES what to build (concept, value, rough approach); `rnd` INVESTIGATES a question and returns evidence plus a recommendation. Tense test: idea = "we should build X"; rnd = "we investigated X — here is what we found."
+- **rnd vs plan** — `plan` is phased execution of an already-decided thing; `rnd` is open investigation that may conclude "do not proceed." `rnd` precedes `plan`.
+- **rnd vs adr** — `rnd` is the investigation that PRECEDES and feeds a decision (and may end in defer/stop); `adr` records the commitment made.
+- **rnd vs rfc** — `rfc` is a specific proposal already open for review (a position exists); `rnd` is open-ended investigation where a position may not exist yet.
 - **task-type vs guide** — task-type is a reusable pattern for a class of tasks; guide is instructions for a specific one-time procedure.
 - **cpat vs adr** — cpat focuses on a code pattern change with before/after; adr records a broader architectural decision with alternatives and consequences.
 - **mrd vs prd** — MRD analyzes the MARKET without proposing a solution; PRD proposes a PRODUCT with requirements.

@@ -1,6 +1,8 @@
 ---
 title: "How Agents Use Archcore"
 status: accepted
+tags:
+  - "concepts"
 ---
 
 ## Overview

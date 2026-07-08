@@ -1,6 +1,9 @@
 ---
 title: "Core Concepts & Vocabulary"
 status: accepted
+tags:
+  - "concepts"
+  - "vocabulary"
 ---
 
 ## Overview
@@ -21,15 +24,15 @@ Categories are *derived from the document type*, not from directories:
 
 | Category | Means | Types |
 |----------|-------|-------|
-| **vision** | what to build & why | prd, idea, plan · mrd, brd, urd · brs, strs, syrs, srs |
+| **vision** | what to build & why | prd, idea, plan, rnd · mrd, brd, urd · brs, strs, syrs, srs |
 | **knowledge** | how the system works | adr, rfc, rule, guide, doc, spec |
 | **experience** | what we learned | task-type, cpat |
 
-## Document types (18)
+## Document types (19)
 
 **Knowledge** — `adr` (final decision), `rfc` (open proposal), `rule` (team standard), `guide` (step-by-step), `doc` (reference material), `spec` (boundary contract).
 
-**Vision** — `prd` (product requirements), `idea` (concept to explore), `plan` (phased tasks); *sources track*: `mrd` (market), `brd` (business), `urd` (user); *ISO 29148 track*: `brs → strs → syrs → srs` (formal requirements cascade).
+**Vision** — `prd` (product requirements), `idea` (concept to explore), `plan` (phased tasks), `rnd` (recommendation-oriented research); *sources track*: `mrd` (market), `brd` (business), `urd` (user); *ISO 29148 track*: `brs → strs → syrs → srs` (formal requirements cascade).
 
 **Experience** — `task-type` (reusable workflow for a recurring task), `cpat` (code-pattern change / incident learning).
 
@@ -56,4 +59,4 @@ Documents linked into recurring flows form *tracks* — see `concepts/document-t
 
 ## Simplicity by constraint
 
-3 statuses · 18 types · 4 relation types · 1 naming convention. Few rules to learn, easy to enforce.
+3 statuses · 19 types · 4 relation types · 1 naming convention. Few rules to learn, easy to enforce.

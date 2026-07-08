@@ -1,6 +1,9 @@
 ---
 title: "Audience & Personas"
 status: accepted
+tags:
+  - "messaging"
+  - "product"
 ---
 
 ## Overview

@@ -1,6 +1,9 @@
 ---
 title: "Document Tracks"
 status: accepted
+tags:
+  - "concepts"
+  - "document-types"
 ---
 
 ## Overview
@@ -11,7 +14,7 @@ For picking the right *type* at each step, see `concepts/document-types-referenc
 
 ## The tracks
 
-**Product** — `idea → prd → plan`. Explore a concept, define what to build, then plan the work. The lightweight default for features.
+**Product** — `(rnd) → idea → prd → plan`. Explore a concept, define what to build, then plan the work. The lightweight default for features. `rnd` is an optional research gate — used only when a question must be resolved first (is this worth exploring? is it feasible? which approach?).
 
 **Architecture** — `adr → spec → plan`. Record a technical decision, specify the contract it implies, then plan the implementation.
 

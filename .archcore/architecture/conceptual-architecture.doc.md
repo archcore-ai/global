@@ -1,6 +1,8 @@
 ---
 title: "Conceptual Architecture"
 status: accepted
+tags:
+  - "architecture"
 ---
 
 ## Overview

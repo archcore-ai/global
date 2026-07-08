@@ -1,6 +1,8 @@
 ---
 title: "Design Principles"
 status: accepted
+tags:
+  - "product"
 ---
 
 ## Overview

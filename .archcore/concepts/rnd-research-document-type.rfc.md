@@ -1,6 +1,9 @@
 ---
 title: "Add rnd: a Research document type"
-status: draft
+status: accepted
+tags:
+  - "concepts"
+  - "document-types"
 ---
 
 ## Summary

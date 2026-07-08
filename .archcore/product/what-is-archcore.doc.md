@@ -1,6 +1,8 @@
 ---
 title: "What Archcore Is"
 status: accepted
+tags:
+  - "product"
 ---
 
 ## Overview

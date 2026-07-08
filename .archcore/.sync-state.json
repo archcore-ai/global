@@ -73,11 +73,6 @@
       "type": "related"
     },
     {
-      "source": "architecture/supported-ai-hosts.doc.md",
-      "target": "architecture/one-product-two-entry-points.adr.md",
-      "type": "related"
-    },
-    {
       "source": "concepts/global-sources.doc.md",
       "target": "architecture/conceptual-architecture.doc.md",
       "type": "related"
@@ -119,6 +114,26 @@
     },
     {
       "source": "concepts/spec-boundary-contract-repositioning.rfc.md",
+      "target": "concepts/document-types-reference.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "architecture/supported-ai-hosts.doc.md",
+      "target": "architecture/one-product-two-entry-points.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "concepts/rnd-research-document-type.rfc.md",
+      "target": "concepts/core-concepts.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/rnd-research-document-type.rfc.md",
+      "target": "concepts/document-tracks.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/rnd-research-document-type.rfc.md",
       "target": "concepts/document-types-reference.doc.md",
       "type": "related"
     }

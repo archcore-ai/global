@@ -1,6 +1,9 @@
 ---
 title: "Messaging Playbook: Hierarchy, Mechanism & Channels"
 status: accepted
+tags:
+  - "messaging"
+  - "product"
 ---
 
 ## Rule

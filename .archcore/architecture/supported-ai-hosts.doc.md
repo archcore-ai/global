@@ -1,6 +1,9 @@
 ---
 title: "Supported AI Hosts"
 status: accepted
+tags:
+  - "architecture"
+  - "product"
 ---
 
 ## Overview

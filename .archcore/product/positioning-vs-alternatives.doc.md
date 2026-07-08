@@ -1,6 +1,9 @@
 ---
 title: "Positioning vs. Alternatives"
 status: accepted
+tags:
+  - "messaging"
+  - "product"
 ---
 
 ## Overview
