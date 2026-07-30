@@ -136,6 +136,36 @@
       "source": "concepts/rnd-research-document-type.rfc.md",
       "target": "concepts/document-types-reference.doc.md",
       "type": "related"
+    },
+    {
+      "source": "product/jobs-to-be-done.doc.md",
+      "target": "product/what-is-archcore.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/jobs-to-be-done.doc.md",
+      "target": "product/audience-and-personas.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/jobs-to-be-done.doc.md",
+      "target": "product/positioning-vs-alternatives.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/jobs-to-be-done.doc.md",
+      "target": "product/messaging-and-voice.rule.md",
+      "type": "related"
+    },
+    {
+      "source": "product/layer-1-command-surface.rfc.md",
+      "target": "product/jobs-to-be-done.doc.md",
+      "type": "implements"
+    },
+    {
+      "source": "product/layer-1-command-surface.rfc.md",
+      "target": "concepts/agent-workflow.doc.md",
+      "type": "related"
     }
   ]
 }
