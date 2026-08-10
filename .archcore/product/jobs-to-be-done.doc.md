@@ -20,7 +20,7 @@ This document names the jobs, ranks them, and fixes what each one turns into on 
 
 **What they actually want.** Not code. Code placed where this repo puts it, following existing conventions, without inventing a new structure.
 
-**Why it is an Archcore job.** Architecture tells the agent where code belongs; rules make it follow team standards instead of improvising.
+**Why it is an Archcore job.** Architecture tells the agent where code belongs; rules make it follow team standards instead of improvising. The mechanism is automatic: the applicable rules, specs, and decisions are injected on the pre-write hook, at the moment of the edit — the user runs no command (`architecture/lifecycle-hooks`).
 
 **How the user says it.** *"I already asked the agent to build the feature. I want it built by this repo's rules, not however it likes."*
 
@@ -54,9 +54,11 @@ This is not pure memory. The claim is narrower and stronger: *give the agent a f
 
 **What they want.** A structured workflow that ends in implementation, not a single generated document.
 
-**Why it is an Archcore job.** Cascades like PRD → plan and ADR → rule → guide are supported. This is adjacent to Spec Kit / BMAD territory, where the staged flow is the *primary* product scenario — for Archcore it is **advanced mode**, never the first use case.
+**Why it is an Archcore job.** Cascades like PRD → plan and ADR → rule → guide are supported. The runtime carries them as gated tracks — including a spec-driven track and the ISO requirements cascade — reached by escalation from a normal planning request rather than as a separate mode the user selects (`concepts/gated-tracks`). This is adjacent to Spec Kit / BMAD territory, where the staged flow is the *primary* product scenario — for Archcore it is **advanced mode**, never the first use case.
 
 **How it is framed.** *"When the task is complex, Archcore can walk the agent through a chain of project artifacts to implementation."*
+
+**Where the boundary holds.** The spec-driven track produces linked context documents that later code is measured against. It does not generate code from a spec, and `spec` stays a contract of a depended-on boundary rather than a source artifact (`concepts/spec-boundary-contract-repositioning`). Borrowing the staged flow does not move Archcore from a context layer to an SDD pipeline; describing it as one on a public surface contradicts Job 1's positioning.
 
 ### Ranking
 

@@ -10,6 +10,8 @@ tags:
 
 Tracks are recommended multi-document flows. Most work doesn't need a single document in isolation — it moves from intent to decision to implementation, and the documents link into a chain. A track names that chain so the path is repeatable.
 
+This document defines **document tracks**: cascades of document *types*, part of the shared vocabulary and followed by any agent, with or without the runtime. The runtime's gated flows are a different thing that reuses the word — see `concepts/gated-tracks`.
+
 For picking the right *type* at each step, see `concepts/document-types-reference`; for the Sources-vs-Specifications layering that the requirements tracks rest on, see `concepts/requirements-layers`.
 
 ## The tracks
@@ -33,3 +35,7 @@ The Sources and ISO tracks are two **layers**, not rivals: sources discover requ
 ## Natural overall flow
 
 `idea → prd → plan → adr → rule → guide → task-type / cpat` — vision becomes knowledge becomes experience.
+
+## How the runtime walks them
+
+The runtime does not expose these names. It routes a request into a gated track that carries one or more of these cascades: `requirements-cascade` carries Sources and ISO, `decision` carries Architecture and Standard, `sdd` covers Product with a design stage added. The cascades above stay canonical — the gated tracks are one way of walking them, not a replacement.

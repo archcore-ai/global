@@ -166,6 +166,111 @@
       "source": "product/layer-1-command-surface.rfc.md",
       "target": "concepts/agent-workflow.doc.md",
       "type": "related"
+    },
+    {
+      "source": "architecture/engine-runtime-boundary.adr.md",
+      "target": "architecture/one-product-two-entry-points.adr.md",
+      "type": "extends"
+    },
+    {
+      "source": "architecture/engine-runtime-boundary.adr.md",
+      "target": "architecture/conceptual-architecture.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "architecture/lifecycle-hooks.doc.md",
+      "target": "architecture/engine-runtime-boundary.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "architecture/lifecycle-hooks.doc.md",
+      "target": "architecture/supported-ai-hosts.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "architecture/lifecycle-hooks.doc.md",
+      "target": "architecture/conceptual-architecture.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "architecture/plugin-cli-compatibility.rule.md",
+      "target": "architecture/engine-runtime-boundary.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "architecture/plugin-cli-compatibility.rule.md",
+      "target": "architecture/lifecycle-hooks.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/gated-tracks.doc.md",
+      "target": "concepts/document-tracks.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/gated-tracks.doc.md",
+      "target": "architecture/engine-runtime-boundary.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "concepts/gated-tracks.doc.md",
+      "target": "product/jobs-to-be-done.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/controlled-technical-writing.rule.md",
+      "target": "concepts/document-types-reference.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/controlled-technical-writing.rule.md",
+      "target": "concepts/global-sources.doc.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "architecture/system-map.doc.md",
+      "target": "architecture/conceptual-architecture.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "architecture/system-map.doc.md",
+      "target": "concepts/gated-tracks.doc.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "architecture/system-map.doc.md",
+      "target": "concepts/core-concepts.doc.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "architecture/system-map.doc.md",
+      "target": "architecture/lifecycle-hooks.doc.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "architecture/system-map.doc.md",
+      "target": "architecture/engine-runtime-boundary.adr.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/relation-conventions.doc.md",
+      "target": "concepts/core-concepts.doc.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "concepts/relation-conventions.doc.md",
+      "target": "concepts/requirements-layers.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/naming-and-layout.doc.md",
+      "target": "concepts/core-concepts.doc.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "concepts/naming-and-layout.doc.md",
+      "target": "concepts/document-types-reference.doc.md",
+      "type": "related"
     }
   ]
 }

@@ -30,7 +30,7 @@ Categories are *derived from the document type*, not from directories:
 
 ## Document types (19)
 
-**Knowledge** — `adr` (final decision), `rfc` (open proposal), `rule` (team standard), `guide` (step-by-step), `doc` (reference material), `spec` (boundary contract).
+**Knowledge** — `adr` (final decision), `rfc` (open proposal), `rule` (team standard), `guide` (step-by-step), `doc` (reference material), `spec` (contract of a depended-on boundary, captured after code or specified ahead of it).
 
 **Vision** — `prd` (product requirements), `idea` (concept to explore), `plan` (phased tasks), `rnd` (recommendation-oriented research); *sources track*: `mrd` (market), `brd` (business), `urd` (user); *ISO 29148 track*: `brs → strs → syrs → srs` (formal requirements cascade).
 
@@ -38,7 +38,7 @@ Categories are *derived from the document type*, not from directories:
 
 ## Statuses (3)
 
-`draft` → `accepted` → `rejected`. That's the whole lifecycle — intentionally minimal.
+`draft` → `accepted` → `rejected`. That's the whole lifecycle — intentionally minimal. A document is created as a draft; promotion is an explicit act, never a side effect of a hook or an automated check.
 
 ## Relations (4)
 
@@ -49,13 +49,13 @@ Directed edges between documents, stored in the sync manifest, not in the docume
 - **depends_on** — source requires target to proceed (plan depends_on adr)
 - **related** — general association
 
-Documents linked into recurring flows form *tracks* — see `concepts/document-tracks`.
+Documents linked into recurring flows form *document tracks* — see `concepts/document-tracks`, and `concepts/gated-tracks` for the runtime flows that walk them.
 
 ## Storage & access
 
 - **Git-native:** everything is Markdown in `.archcore/`, reviewed in PRs, versioned with code.
-- **MCP is the mutation surface:** agents create, read, update, and search documents and relations through MCP tools, rather than editing context by hand.
-- **Session hooks** inject relevant context at the start of an agent session.
+- **MCP is the mutation surface:** agents create, read, update, and search documents and relations through MCP tools, rather than editing context by hand. A direct editor write into `.archcore/` is refused.
+- **Lifecycle hooks** inject context at session start and before an edit, and validate after a write — see `architecture/lifecycle-hooks`.
 
 ## Simplicity by constraint
 

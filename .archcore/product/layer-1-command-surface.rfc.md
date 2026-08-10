@@ -1,27 +1,21 @@
 ---
 title: "Layer 1 Command Surface Mapped to the Jobs"
-status: draft
+status: rejected
 tags:
   - "product"
 ---
 
 ## Summary
 
-Reshape the plugin's Layer 1 — the command surface a user learns first — into five verbs that map one-to-one onto the jobs in `product/jobs-to-be-done`:
+**Rejected — superseded by the shipped four-command surface.** This RFC proposed five Layer 1 verbs (`context`, `capture`, `plan`, `decide`, `health`) mapped onto `product/jobs-to-be-done`. The plugin instead collapsed the surface to **four** commands — `init`, `plan`, `document`, `review` — with a non-visible gated track layer beneath them. The shipped surface is normative in `plugin/.archcore/plugin/command-surface-v2.spec`; the reasoning is in `plugin/.archcore/plugin/four-command-palette.adr`. The ecosystem-level ownership split is recorded in `architecture/engine-runtime-boundary`.
 
-- `/archcore:context` — what do I need to know before changing this area
-- `/archcore:capture` — document a module, folder, API, feature, or the whole project
-- `/archcore:plan` — break a change down before implementing it
-- `/archcore:decide` — lock a decision so the next code accounts for it
-- `/archcore:health` — coverage, drift, stale docs, graph gaps
+The original proposal is kept below for the record.
 
 ## Motivation
 
 The command surface is how the jobs become reachable. If a user's job is "ship this feature by this repo's rules", the first command they meet should answer exactly that, in their words.
 
-Today the plugin ships `audit`, `capture`, `context`, `decide`, `help`, `init`, `plan`. Four of the five proposed verbs already exist; the surface is not currently *organised* around the jobs, and `audit` names the activity rather than the question the user has ("is my context healthy — where are the gaps?").
-
-Naming the set explicitly as Layer 1 also makes the split visible: `init` and `help` are setup and discovery, not day-to-day work.
+At the time of writing the plugin shipped `audit`, `capture`, `context`, `decide`, `help`, `init`, `plan`. Four of the five proposed verbs already existed; the surface was not organised around the jobs, and `audit` named the activity rather than the question the user has.
 
 ## Detailed Design
 
@@ -33,26 +27,24 @@ Naming the set explicitly as Layer 1 also makes the split visible: `init` and `h
 | `/archcore:decide` | 3 | "We chose X. Record it so the agent stops re-litigating it." |
 | `/archcore:health` | — (maintenance) | "Where is my context thin, stale, or disconnected?" |
 
-Changes from the current surface:
+Changes proposed against the then-current surface:
 
-1. `audit` → `health`. Same capability, renamed to the user's question. Coverage, drift, stale docs, and graph gaps become the stated outputs.
-2. `init` and `help` drop out of Layer 1 into a setup/discovery layer. They are still shipped; they are just not what the surface is *organised around*.
-3. `context`, `capture`, `plan`, `decide` keep their names — they already read as the jobs.
-
-Open questions, to settle before this moves to accepted:
-
-- Is `audit` renamed outright, or kept as an alias for one release?
-- Does `capture` cover whole-project bootstrap, or does that stay with `init`?
-- Is five already too many for a first-run surface, given Job 1 dominates the ranking?
+1. `audit` → `health`. Same capability, renamed to the user's question.
+2. `init` and `help` drop out of Layer 1 into a setup/discovery layer.
+3. `context`, `capture`, `plan`, `decide` keep their names.
 
 ## Drawbacks
 
 - Renaming `audit` breaks muscle memory, existing docs, and any external write-ups referencing it.
-- "Health" is softer than "audit" and reads less like a check that can fail — a real cost for a command whose output is a gap list.
+- "Health" is softer than "audit" and reads less like a check that can fail.
 - Five commands still ask the user to choose. If Job 1 is genuinely primary, a smaller surface may convert better.
 
 ## Alternatives
 
-- **Keep `audit`.** No rename, and Layer 1 is defined purely as a grouping. Cheapest; keeps the verb precise, loses the question-shaped naming.
-- **Fold health into `context`.** One command that reports both what applies here and what is missing. Fewer verbs, muddier output.
-- **Ship three.** `context`, `decide`, `plan` only — matching jobs 1–4 minus maintenance, with capture folded into decide. Sharpest first-run story, weakest coverage story.
+- **Keep `audit`.** No rename, Layer 1 defined purely as a grouping.
+- **Fold health into `context`.** Fewer verbs, muddier output.
+- **Ship three.** `context`, `decide`, `plan` only.
+
+## Why it was rejected
+
+The third drawback proved decisive, and further than this RFC went. User research recorded the *system verbs* — `capture`, `decide`, `context`, `audit` — as the discovery bottleneck rather than the count, so renaming one of them did not address the problem. The shipped answer keeps only job-shaped verbs, absorbs `capture` and `decide` into `document`, absorbs `audit` into `review`, drops `context` in favour of automatic hook injection (`architecture/lifecycle-hooks`), and drops `help` into the command descriptions. Job coverage moved from command names to the gated track layer described in `concepts/gated-tracks`.

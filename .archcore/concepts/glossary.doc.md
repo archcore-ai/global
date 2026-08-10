@@ -30,16 +30,30 @@ Canonical definitions of Archcore terms. Use these consistently across the ecosy
 
 **Relation graph** — the network formed by relations; lets an agent load a whole chain of related context.
 
-**MCP (Model Context Protocol)** — the open protocol agents use to read, search, create, update, and relate documents.
+**MCP (Model Context Protocol)** — the open protocol agents use to read, search, create, update, and relate documents. The single mutation surface.
 
-**Session hooks** — automatic injection of relevant context when an agent session starts.
+**Lifecycle hooks** — the three events Archcore runs on: `SessionStart` (context injection), `PreToolUse` (write guard and code-alignment injection), `PostToolUse` (validation and advisories). See `architecture/lifecycle-hooks`.
 
-**Engine (CLI)** — the component that stores and serves the context and exposes it over MCP.
+**Guardrail** — a check carried on a lifecycle hook. Exactly one is blocking (the write guard); the rest report and never modify a document.
 
-**Runtime (Plugin)** — the optional higher-level experience over the engine: intent workflows, guardrails, applied context injection.
+**Write guard** — the blocking guardrail that refuses a direct editor write into `.archcore/`, so MCP stays the only mutation surface.
+
+**Code-alignment injection** — delivery of the rules, specs, and decisions that apply to a file, at the moment the agent edits it.
+
+**Engine (CLI)** — the component that stores and serves the context, exposes it over MCP, and runs the lifecycle hooks and guardrails.
+
+**Runtime (Plugin)** — the optional higher-level experience over the engine: the command surface and the gated tracks beneath it.
 
 **Entry point** — a way into the same context layer; Archcore has two (Plugin and CLI) for one product.
 
 **Shared (global) source** — a context layer mounted read-only by other projects so ecosystem-wide truths live in one place; consumers depend on it, never the reverse.
 
-**Track (cascade)** — a recommended multi-document flow (e.g. idea → prd → plan).
+**Document track (cascade)** — a recommended multi-document flow of *types*, e.g. `idea → prd → plan`. See `concepts/document-tracks`.
+
+**Gated track** — a runtime flow of *gates* beneath a command, which produces documents and resumes across sessions. Distinct from a document track; see `concepts/gated-tracks`.
+
+**Gate** — one stage of a gated track: entry conditions, a bounded question budget, the document it produces, and its exit checks.
+
+## A note on numbered layers
+
+`architecture/conceptual-architecture` numbers four **architectural roles** — context, engine, runtime, access. Tool repositories number their own internal layers, and the two schemes do not line up. Across repository boundaries, name the role rather than a number.
