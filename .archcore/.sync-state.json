@@ -271,6 +271,81 @@
       "source": "concepts/naming-and-layout.doc.md",
       "target": "concepts/document-types-reference.doc.md",
       "type": "related"
+    },
+    {
+      "source": "product/canonical-narrative.rule.md",
+      "target": "product/two-discovery-categories.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/canonical-narrative.rule.md",
+      "target": "product/messaging-and-voice.rule.md",
+      "type": "related"
+    },
+    {
+      "source": "product/surface-descriptors.doc.md",
+      "target": "product/canonical-narrative.rule.md",
+      "type": "implements"
+    },
+    {
+      "source": "product/seo-information-architecture.doc.md",
+      "target": "product/two-discovery-categories.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/seo-information-architecture.doc.md",
+      "target": "product/surface-descriptors.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/narrative-rollout.plan.md",
+      "target": "product/two-discovery-categories.adr.md",
+      "type": "implements"
+    },
+    {
+      "source": "product/narrative-rollout.plan.md",
+      "target": "product/canonical-narrative.rule.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/narrative-rollout.plan.md",
+      "target": "product/surface-descriptors.doc.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/narrative-rollout.plan.md",
+      "target": "product/seo-information-architecture.doc.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/two-discovery-categories.adr.md",
+      "target": "product/messaging-and-voice.rule.md",
+      "type": "related"
+    },
+    {
+      "source": "product/two-discovery-categories.adr.md",
+      "target": "product/jobs-to-be-done.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/messaging-playbook.rule.md",
+      "target": "product/canonical-narrative.rule.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/adjacent-category-terms.adr.md",
+      "target": "product/two-discovery-categories.adr.md",
+      "type": "extends"
+    },
+    {
+      "source": "product/canonical-narrative.rule.md",
+      "target": "product/adjacent-category-terms.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/seo-information-architecture.doc.md",
+      "target": "product/adjacent-category-terms.adr.md",
+      "type": "depends_on"
     }
   ]
 }

@@ -52,7 +52,7 @@ This is not pure memory. The claim is narrower and stronger: *give the agent a f
 
 **Trigger.** Not a small edit — a change that pulls a PRD, a plan, a rule, a guide, and possibly an audit trail along with it.
 
-**What they want.** A structured workflow that ends in implementation, not a single generated document.
+**What they want.** A structured sequence of artifacts that ends in implementation, not a single generated document.
 
 **Why it is an Archcore job.** Cascades like PRD → plan and ADR → rule → guide are supported. The runtime carries them as gated tracks — including a spec-driven track and the ISO requirements cascade — reached by escalation from a normal planning request rather than as a separate mode the user selects (`concepts/gated-tracks`). This is adjacent to Spec Kit / BMAD territory, where the staged flow is the *primary* product scenario — for Archcore it is **advanced mode**, never the first use case.
 
@@ -67,7 +67,7 @@ This is not pure memory. The claim is narrower and stronger: *give the agent a f
 | 1 | Build by this repo's architecture, rules, and past decisions | **Primary** — always lead with this |
 | 2 | Continue work without re-explaining the project | Secondary |
 | 3 | Record a decision so it shapes future code | Supporting |
-| 4 | Run a multi-step workflow through to implementation | Advanced |
+| 4 | Run a multi-step track through to implementation | Advanced |
 
 ### What this means for public surfaces
 
