@@ -346,6 +346,66 @@
       "source": "product/seo-information-architecture.doc.md",
       "target": "product/adjacent-category-terms.adr.md",
       "type": "depends_on"
+    },
+    {
+      "source": "market/moat-parity-and-gaps.doc.md",
+      "target": "market/competitive-landscape.doc.md",
+      "type": "extends"
+    },
+    {
+      "source": "market/commoditization-and-bundling-risks.doc.md",
+      "target": "market/competitive-landscape.doc.md",
+      "type": "extends"
+    },
+    {
+      "source": "market/competitive-tracking-policy.rfc.md",
+      "target": "market/competitive-landscape.doc.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "market/competitive-tracking-policy.rfc.md",
+      "target": "market/moat-parity-and-gaps.doc.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "market/competitive-tracking-policy.rfc.md",
+      "target": "market/commoditization-and-bundling-risks.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "market/competitive-landscape.doc.md",
+      "target": "product/positioning-vs-alternatives.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "market/moat-parity-and-gaps.doc.md",
+      "target": "product/positioning-vs-alternatives.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "market/commoditization-and-bundling-risks.doc.md",
+      "target": "product/positioning-vs-alternatives.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "market/competitive-landscape.doc.md",
+      "target": "product/two-discovery-categories.adr.md",
+      "type": "related"
+    },
+    {
+      "source": "market/moat-parity-and-gaps.doc.md",
+      "target": "product/what-is-archcore.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "market/commoditization-and-bundling-risks.doc.md",
+      "target": "product/adjacent-category-terms.adr.md",
+      "type": "related"
+    },
+    {
+      "source": "market/moat-parity-and-gaps.doc.md",
+      "target": "product/jobs-to-be-done.doc.md",
+      "type": "related"
     }
   ]
 }
