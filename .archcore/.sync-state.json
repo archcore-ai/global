@@ -159,11 +159,6 @@
     },
     {
       "source": "product/layer-1-command-surface.rfc.md",
-      "target": "product/jobs-to-be-done.doc.md",
-      "type": "implements"
-    },
-    {
-      "source": "product/layer-1-command-surface.rfc.md",
       "target": "concepts/agent-workflow.doc.md",
       "type": "related"
     },
@@ -415,6 +410,21 @@
     {
       "source": "concepts/document-prose-canon.rule.md",
       "target": "concepts/document-types-reference.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/layer-1-command-surface.rfc.md",
+      "target": "product/jobs-to-be-done.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/layer-1-command-surface.rfc.md",
+      "target": "concepts/gated-tracks.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/layer-1-command-surface.rfc.md",
+      "target": "architecture/engine-runtime-boundary.adr.md",
       "type": "related"
     }
   ]

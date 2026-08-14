@@ -20,7 +20,7 @@ Goal: `spec` should trigger **somewhat** more often — closing a real under-cre
 2. **Every disambiguator routes away from spec.** `spec vs doc/rule/adr` each set a high bar for spec and a low-friction fallback to the other type. There is no tie-breaker that routes an ambiguous case *toward* spec.
 3. **Highest-effort template.** Spec is the most demanding artifact (normative behavior, invariants, conformance), so under uncertainty agents pick the cheaper `doc`/`adr`.
 
-In the plugin this compounds: `capture` and `decide` hard-default to `adr`, spec fires only on a narrow "component contract" signal, and there is no `_shared/spec-contract.md` reinforcement (whereas `adr` has `_shared/adr-contract.md`).
+In the plugin this compounded, on the command surface current when this RFC was written: `capture` and `decide` hard-defaulted to `adr`, spec fired only on a narrow "component contract" signal, and there was no `_shared/spec-contract.md` reinforcement (whereas `adr` had `_shared/adr-contract.md`). That surface was later replaced — see *Per-tool implementation* below.
 
 **Competitive context.** The spec-driven-development movement — GitHub Spec Kit, AWS Kiro, Tessl, BMAD — makes "spec" the *primary, upstream* artifact ("the spec is the artifact, code is a side effect" — Tessl). Specs trigger constantly there because the spec is the entry point of the workflow and carries a vivid value-narrative (stops drift and API hallucination; reported 3–10× first-pass agent success). Archcore's spec is the inverse: an optional terminal formalization with no stated why-now.
 
@@ -79,17 +79,20 @@ Spec stays **one subject per document**. The widening is strictly the trigger ("
 `concepts/core-concepts.doc.md`:
 - If it carries a one-line spec gloss, align it with the boundary-contract framing.
 
+Both changes are current — landed in `concepts/document-types-reference` and `concepts/core-concepts`.
+
 ## Per-tool implementation (lives with each tool, on acceptance)
 
 **cli**
 - `internal/mcp/server.go` — rewrite the WHEN-TO-CREATE spec line (event-based + bidirectional); add the TYPE-SELECTION tie-breaker toward spec; optionally add the NOT-list.
 - `internal/mcp/tools/create_document.go` — align the spec catalog one-liner.
-- Templates unchanged — the spec template is already boundary-structured (Purpose/Scope/Contract Surface/Normative Behavior/Conformance).
+- Templates unchanged — the spec template is already boundary-structured (Purpose/Scope/Contract Surface/Normative Behavior/Conformance). That legacy heading pair now reads as `Surface` / `Failure Behavior` under the spec format canon in `concepts/document-types-reference`.
 
 **plugin**
-- `capture/SKILL.md` — widen the spec routing signal beyond "component contract or interface"; for a depended-on boundary, default to `spec` rather than `adr`.
-- `decide/SKILL.md` — offer `spec` whenever a decision establishes or changes a boundary contract, not only on the explicit "and formalize the contract" phrase.
-- `_shared/spec-contract.md` — NEW file, parity with `adr-contract.md`: positioning + section skeleton + NOT-list.
+- The `capture` and `decide` skills this RFC originally targeted are deprecated. The plugin surface collapsed to four commands — `init`, `plan`, `document`, `review` — with gated tracks beneath them (`concepts/gated-tracks`). Both verbs were absorbed into `document`.
+- `skills/_shared/tracks/describe.md` — widen the spec routing signal beyond "component contract or interface"; for a depended-on boundary, default to `spec` rather than `doc`.
+- `skills/_shared/tracks/decision.md` — offer `spec` whenever a decision establishes or changes a boundary contract, not only on the explicit "and formalize the contract" phrase.
+- `skills/_shared/spec-contract.md` — current: the file ships, at parity with `adr-contract.md`.
 
 ## Adoption
 

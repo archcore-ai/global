@@ -97,7 +97,8 @@ Two facts were corrected in passing, in the opposite direction from the one expe
 **Organization surfaces**
 
 - [x] GitHub organization bio — was the superseded "turns your repository into structured, machine-readable context" phrase, now the canonical bio. The 422 on the first attempt was GitHub's 160-character limit, not a token scope.
-- [x] GitHub organization profile README — `archcore-ai/.github` created public, `profile/README.md` live on the organization page. The draft's link to `/learn/harness-engineering/` was replaced with the `/learn/` hub before publishing: the article exists only in the local build, so a public profile would have pointed at a 404. Restore the direct link after the landing deploy.
+- [x] GitHub organization profile README — `archcore-ai/.github` created public, `profile/README.md` live on the organization page. The draft's link to `/learn/harness-engineering/` was replaced with the `/learn/` hub before publishing: the article existed only in the local build, so a public profile would have pointed at a 404.
+- [ ] Point the organization profile README at `/learn/harness-engineering/` directly. The page shipped in P2.5, so the 404 risk is gone.
 - [ ] X / Bluesky bio, LinkedIn tagline and description.
 
 **Surfaces found stale during the outward-facing pass (all fixed)**

@@ -16,9 +16,15 @@ This is the mechanism that powers a single source of truth across many repos. Th
 
 - **Read-only mount.** A consumer references a global source; it can read but never write it. Global documents are surfaced by `list_documents` / `search_documents` alongside local ones, tagged `source_kind: "global"`.
 - **Local overrides global (precedence).** When a local document and a global document cover the same ground, the local one is authoritative. The global doc is a default the local can override.
-- **One-directional invariant (`local → global`).** A global may be referenced *by* a local, never the reverse. A shared global must not accumulate back-references to the repos that consume it, and must not reference another global (no transitive globals).
+- **One-directional invariant (`local → global`).** A global may be referenced *by* a local, never the reverse. A global document carries no relation to a consumer document, requires no consumer to make sense, and must not reference another global (no transitive globals).
 - **One writable primary.** A repo writes only to its own local `.archcore/`; every mounted global is read-only.
 - **Mandatory, fail-loud.** A declared global source that cannot be resolved is an error surfaced loudly, not silently skipped — so missing shared context never degrades quietly.
+
+## What the invariant does not forbid
+
+The invariant governs **dependency direction**, not vocabulary. An ecosystem-wide document may name a consumer's file, path, or component when that is how it states where each repo implements its half — a rollout coordinating one change across every repository, a technique shared by several properties, or a roster reconciling what two entry points support.
+
+The test is ownership: a fact true for the ecosystem, which would otherwise be copied into several repos, belongs in the global source even when stating it requires a consumer's path. A fact owned by one repo does not, however it is phrased.
 
 ## Reading convention for agents
 
