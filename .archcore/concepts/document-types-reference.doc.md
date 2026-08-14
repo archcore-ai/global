@@ -8,7 +8,7 @@ tags:
 
 ## Overview
 
-The detailed per-type reference and the "choosing the right type" selection guide for Archcore's 19 document types. The high-level model (three virtual categories, `slug.type.md` naming, statuses, relations) lives in `concepts/core-concepts`; the multi-document flows in `concepts/document-tracks`; the Sources-vs-Specifications layering in `concepts/requirements-layers`. This document is the type-selection detail that all of those depend on. Category is derived from the type suffix, never from the directory.
+The detailed per-type reference and the "choosing the right type" selection guide for Archcore's 19 document types. The high-level model (three virtual categories, `slug.type.md` naming, statuses, relations) lives in `concepts/core-concepts`; the multi-document flows in `concepts/document-tracks`; the Sources-vs-Specifications layering in `concepts/requirements-layers`. This document is the type-selection detail that all of those depend on. Category is derived from the type suffix, never from the directory. The prose profile and the line format each type carries are assigned by `concepts/document-prose-canon`.
 
 ## Vision types
 

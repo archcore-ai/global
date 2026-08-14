@@ -3,6 +3,7 @@ title: "Controlled Technical Writing for Archcore Documentation"
 status: accepted
 tags:
   - "concepts"
+  - "docs-style"
   - "vocabulary"
 ---
 
@@ -27,6 +28,7 @@ Two readers consume Archcore documentation: engineers and AI coding agents. Both
 15. The author MUST NOT state or imply that a repository complies with ASD-STE100, ISO 24495-1, or any other external standard. The profile is inspired by them and is internal.
 16. The author MUST NOT edit a mounted global source and MUST NOT create a relation to one.
 17. The author MUST NOT include a review checklist in a generated document, and MUST NOT include a writing-quality score unless the user asked for a review report.
+18. WHEN an author writes a document of type T, the author MUST apply the prose profile and the line format that `concepts/document-prose-canon` assigns to T.
 
 ## Rationale
 

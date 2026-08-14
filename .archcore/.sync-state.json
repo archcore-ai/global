@@ -406,6 +406,16 @@
       "source": "market/moat-parity-and-gaps.doc.md",
       "target": "product/jobs-to-be-done.doc.md",
       "type": "related"
+    },
+    {
+      "source": "concepts/document-prose-canon.rule.md",
+      "target": "concepts/controlled-technical-writing.rule.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/document-prose-canon.rule.md",
+      "target": "concepts/document-types-reference.doc.md",
+      "type": "related"
     }
   ]
 }
