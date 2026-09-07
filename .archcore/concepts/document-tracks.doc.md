@@ -26,6 +26,12 @@ For picking the right *type* at each step, see `concepts/document-types-referenc
 
 **ISO 29148** — `brs → strs → syrs → srs`. The formal requirements cascade (business → stakeholder → system → software) for contexts that need rigorous decomposition.
 
+## Research vocabulary
+
+The accepted vocabulary adds `research` in vision and `evidence` in knowledge — `concepts/research-and-evidence-types`. The CLI release and runtime routing remain pending.
+
+`evidence supports research` links a reusable material to a territory investigation. `rnd depends_on research` links a decision-bound investigation to that territory. These are document conventions, not additional execution gates; the existing Product flow remains valid.
+
 ## How they connect
 
 Documents in a track are wired with relations — typically `implements` and `depends_on` — so an agent loading the last document can walk back to the rationale behind it. Tracks are guidance, not gates: use the lightweight ones by default and the formal ones only when the rigor is warranted.

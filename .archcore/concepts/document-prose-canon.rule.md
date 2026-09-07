@@ -74,6 +74,8 @@ The profile decides the style. The format decides the parse.
 | `plan` | Product | ISO | F4 · F3 | task <= 20 words, one outcome |
 | `idea` | Product | ISO | F4 | `[assumption]` density is unbounded |
 | `rnd` | Product | ISO | F4 | one recommendation of four |
+| `research` | Product | ISO | F4 | coverage of the declared scope |
+| `evidence` | Knowledge | ISO | F5 · F4 | four fixed Locator lines |
 | `mrd` | Sources | ISO | F5 · F4 | every market figure carries a source and a date |
 | `brd` | Sources | ISO | F5 · F4 | every KPI carries a number and a horizon |
 | `urd` | Sources | ISO | F5 · F4 | every need traces to a named persona |
@@ -83,6 +85,8 @@ The profile decides the style. The format decides the parse.
 | `srs` | ISO 29148 §9.6 | STE | F1 | identifier `SRS-nnn` · traces up to a `syrs` |
 | `task-type` | Experience | STE | F3 | step <= 20 words |
 | `cpat` | Experience | ISO | F4 | Before and After both hold code |
+
+The `research` and `evidence` assignments follow the accepted vocabulary in `concepts/research-and-evidence-types`. `research` belongs to vision; `evidence` belongs to knowledge. Their engine release and runtime routing remain pending.
 
 The Sources track carries one more constraint that its three types share: formal ISO structure — a mission statement, an operational concept, a verification matrix — belongs to the specification layer, so it is a defect in `mrd`, `brd`, and `urd`.
 

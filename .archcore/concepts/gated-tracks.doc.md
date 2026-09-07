@@ -24,7 +24,7 @@ Do not confuse this with a **document track** (`concepts/document-tracks`), whic
 - A gate that finds its entry conditions already satisfied by existing documents or by the request text asks **zero** questions. A fully specified request runs question-free.
 - A document a gate produces is created as a **draft**. Promotion to accepted is a separate, explicitly confirmed step — never a side effect of a hook or a gate.
 - Track state lives inside the draft artifact, so an interrupted flow **resumes** in a later session at the earliest gate whose exit checks have not passed, without re-asking answered questions.
-- Every one of the 19 document types is reachable through at least one track.
+- The current catalog covers the 19 document types that precede the research vocabulary expansion. Runtime routes for the newly accepted `research` and `evidence` types remain planned — `product/research-direction`.
 
 ## The catalog
 
@@ -38,6 +38,8 @@ Do not confuse this with a **document track** (`concepts/document-tracks`), whic
 | `actualize` | scope the diff → verdict per finding → confirmed fixes | `review` |
 | `closeout` | verify the plan against the branch → merge the canon → transition statuses | `review` |
 | `experience` | detect a repeated pattern → offer a cpat or task-type | `review` |
+
+The current `research` track concludes an `rnd` with a recommendation. The planned runtime update distinguishes coverage-based `research` from recommendation-based `rnd` and permits reusable `evidence` records. The new classification is `research` in vision and `evidence` in knowledge; this accepted decision does not claim the routing change has shipped.
 
 ## Two senses of track
 

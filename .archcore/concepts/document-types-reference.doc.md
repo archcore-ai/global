@@ -8,7 +8,9 @@ tags:
 
 ## Overview
 
-The detailed per-type reference and the "choosing the right type" selection guide for Archcore's 19 document types. The high-level model (three virtual categories, `slug.type.md` naming, statuses, relations) lives in `concepts/core-concepts`; the multi-document flows in `concepts/document-tracks`; the Sources-vs-Specifications layering in `concepts/requirements-layers`. This document is the type-selection detail that all of those depend on. Category is derived from the type suffix, never from the directory. The prose profile and the line format each type carries are assigned by `concepts/document-prose-canon`.
+The detailed per-type reference and the "choosing the right type" selection guide for Archcore's 21 accepted document types. The high-level model (three virtual categories, `slug.type.md` naming, statuses, relations) lives in `concepts/core-concepts`; the multi-document flows in `concepts/document-tracks`; the Sources-vs-Specifications layering in `concepts/requirements-layers`. This document is the type-selection detail that all of those depend on. Category is derived from the type suffix, never from the directory. The prose profile and the line format each type carries are assigned by `concepts/document-prose-canon`.
+
+The accepted vocabulary includes `research` in vision and `evidence` in knowledge. The CLI release and runtime routing changes remain pending — `concepts/research-and-evidence-types` and `product/research-direction`.
 
 ## Vision types
 
@@ -20,6 +22,7 @@ The detailed per-type reference and the "choosing the right type" selection guid
 | `idea` | A concept worth exploring — problem, value, rough approach |
 | `plan` | A concrete implementation plan with phased tasks |
 | `rnd` | Focused investigation that ends in a Recommendation (proceed / refine / defer / stop) and a Next Action — the optional research gate that precedes `idea`/`plan` |
+| `research` | Territory investigation closed by coverage of its scope, with dated sources, findings, synthesis, and open gaps |
 
 ### Sources track (discovery)
 
@@ -52,6 +55,7 @@ Decomposes through progressively detailed levels: BRS → StRS → SyRS → SRS.
 | `guide` | Step-by-step instructions for completing a task |
 | `spec` | Normative behavior contract of something others rely on — one boundary (API, interface, schema, protocol) or one feature/subsystem; captured from existing code or specified ahead of it |
 | `doc` | Non-behavioral reference — tables, registries, glossaries, component lists |
+| `evidence` | One external material with its locator, access date, extract, and interpretation notes |
 
 ### Spec format canon
 
@@ -74,6 +78,10 @@ One form for every spec subject — six sections: **Purpose & Scope** (subject +
 - **spec vs adr** — spec is the living canonical truth (present-tense: "it works this way"); adr is the decision record (past-tense: "we chose this because"). Both may exist for one component. A spec may be written after code (capture the existing contract) or before it (specify the contract to build).
 - **spec vs prd** — the routing gate: if the document answers *what should we build and why* (user stories, priorities, success metrics), it is a prd (or ISO `syrs`/`srs`); if it answers *what behavior can consumers rely on right now*, it is a spec.
 - **spec is not** — requirements (use `prd`/`syrs`), task breakdown (use `plan`), rationale (use `adr`), or non-normative reference (use `doc`). It covers only normative behavior others rely on right now.
+- **research vs rnd** — coverage of the declared scope closes `research`; a recommendation closes `rnd`. Both belong to vision.
+- **research vs doc** — `research` records an investigation with questions, dated sources, coverage, and gaps; `doc` records reference information.
+- **evidence vs doc** — `evidence` records one material and its extract; `doc` records reference information that may combine several materials.
+- **evidence vs statement** — one material is an `evidence`; one statement within a material is not a separate type.
 - **rnd vs idea** — `idea` PROPOSES what to build (concept, value, rough approach); `rnd` INVESTIGATES a question and returns evidence plus a recommendation. Tense test: idea = "we should build X"; rnd = "we investigated X — here is what we found."
 - **rnd vs plan** — `plan` is phased execution of an already-decided thing; `rnd` is open investigation that may conclude "do not proceed." `rnd` precedes `plan`.
 - **rnd vs adr** — `rnd` is the investigation that PRECEDES and feeds a decision (and may end in defer/stop); `adr` records the commitment made.

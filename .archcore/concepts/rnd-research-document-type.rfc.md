@@ -12,6 +12,8 @@ Add `rnd` as a 19th canonical document type in the `vision` category: a single, 
 
 This is a change to the shared vocabulary, so the proposal lives at the `global` level. Implementation-grade detail (templates, validation, tests) lives with each tool (cli, plugin) once this is accepted.
 
+The accepted 2026-09-07 RFC `concepts/research-and-evidence-types` adds coverage-based `research` in vision and material records as `evidence` in knowledge; `rnd` scope is unchanged, and the new CLI release remains pending.
+
 ## Motivation
 
 The vocabulary has `idea` and `plan`, plus the discovery (sources) and specification (ISO) tracks, but no home for recommendation-oriented research. Teams routinely investigate a question *before* committing — "Can we use library X? What's the perf cost? Is approach A or B better?" — and that work has nowhere to live:
@@ -45,7 +47,7 @@ Risks & Unknowns
 Related Materials
 ```
 
-Every `rnd` MUST end with a Recommendation (one of proceed / refine / defer / stop) and a Next Action. A research document without a verdict is incomplete.
+Every `rnd` MUST end with a Recommendation (one of proceed / refine / defer / stop) and a Next Action. An `rnd` without a verdict is incomplete.
 
 ### Status lifecycle (reuses the existing 3 statuses)
 

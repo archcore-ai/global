@@ -17,7 +17,7 @@ The filename is the schema. `concepts/core-concepts` states the convention in on
 ```
 
 - **Slug** — lowercase alphanumeric segments separated by single hyphens, matching `^[a-z0-9]+(-[a-z0-9]+)*$`.
-- **Type** — one of the 19 valid types. It selects the template, the section contract, and the virtual category.
+- **Type** — one of the accepted types in `concepts/core-concepts`. It selects the template, the section contract, and the virtual category.
 - **Extension** — always `.md`.
 
 Valid: `jwt-strategy.adr.md`, `api-error-format.rule.md`, `callbacks-to-async.cpat.md`.
@@ -25,6 +25,8 @@ Valid: `jwt-strategy.adr.md`, `api-error-format.rule.md`, `callbacks-to-async.cp
 Invalid slugs: `JWT_Strategy` (uppercase, underscore), `use postgres` (space), `my.decision` (dot inside the slug — the dot is the type separator).
 
 A file with no recognized type segment is not rejected. The scanner keeps it and categorizes it as **knowledge**. Silence, not an error: an unreadable name costs the document its type, not its existence.
+
+The accepted vocabulary assigns `research` to vision and `evidence` to knowledge. Recognition of these suffixes requires the planned CLI release; an older scanner uses its unrecognized-type fallback. See `concepts/research-and-evidence-types`.
 
 ## Directories mean nothing
 

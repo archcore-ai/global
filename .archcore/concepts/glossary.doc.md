@@ -10,6 +10,8 @@ tags:
 
 Canonical definitions of Archcore terms. Use these consistently across the ecosystem.
 
+The accepted vocabulary includes `research` in vision and `evidence` in knowledge. The CLI release and runtime routing changes remain pending — `concepts/research-and-evidence-types` and `product/research-direction`.
+
 ## Terms
 
 **Archcore** — git-native context for AI coding agents: typed, structured documents in a repository that agents read and follow.
@@ -22,11 +24,19 @@ Canonical definitions of Archcore terms. Use these consistently across the ecosy
 
 **Vision / Knowledge / Experience** — what to build & why / how the system works / what we learned.
 
+Vision includes discovery as well as product intent. Knowledge includes reusable evidence as well as system constraints and reference information.
+
+**Research (`research`)** — a vision document that maps a territory and closes on coverage of the declared scope.
+
+**Evidence (`evidence`)** — a knowledge document that records one material with its locator and extract.
+
+**RnD (`rnd`)** — a vision document that investigates a bounded question and closes on a recommendation.
+
 **Frontmatter** — the YAML header of a document: `title`, `status`, optional `tags`.
 
 **Status** — a document's lifecycle state: `draft`, `accepted`, or `rejected`.
 
-**Relation** — a directed link between two documents: `implements`, `extends`, `depends_on`, or `related`.
+**Relation** — a directed link between two documents. The seven accepted values and their directions are defined in `concepts/relation-conventions`.
 
 **Relation graph** — the network formed by relations; lets an agent load a whole chain of related context.
 

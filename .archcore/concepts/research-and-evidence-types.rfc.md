@@ -1,5 +1,5 @@
 ---
-title: "Add research and evidence: Two Knowledge Types and Three Relations for Stored Investigations"
+title: "Add research and evidence: Two Types and Three Relations for Stored Investigations"
 status: accepted
 tags:
   - "concepts"
@@ -9,7 +9,7 @@ tags:
 
 ## Summary
 
-Add two knowledge types, `research` and `evidence`, and three relation types, `supports`, `contradicts`, and `supersedes`. `research` records an open investigation of a territory that closes on coverage, not on a verdict; `evidence` records one external material — a report, a page, a dataset, an interview — with its locator, its access date, and the extract a document relies on. `rnd` stays the investigation that ends in a recommendation. The change is vocabulary only: types, templates, relation names, and conventions; how an investigation is conducted stays with the host and the user (`architecture/store-not-method-engine`).
+Add `research` in vision, `evidence` in knowledge, and three relation types, `supports`, `contradicts`, and `supersedes`. `research` records an open investigation of a territory that closes on coverage, not on a verdict; `evidence` records one external material — a report, a page, a dataset, an interview — with its locator, its access date, and the extract a document relies on. `rnd` stays the investigation that ends in a recommendation. The change is vocabulary only: types, templates, relation names, and conventions; how an investigation is conducted stays with the host and the user (`architecture/store-not-method-engine`).
 
 ## Motivation
 
@@ -42,7 +42,9 @@ Statuses of `evidence` reuse the three existing values: `draft` — recorded by 
 
 ### Category
 
-Both types are **knowledge**. The category's meaning widens from "how the system works" to "how the system and its world work". `rnd` stays in vision as decision support. Type count becomes 21; knowledge holds 8 types.
+`research` belongs to **vision** as territory discovery, alongside `rnd` and `mrd`. `evidence` belongs to **knowledge** as a reusable record of one material. `rnd` remains in vision. The accepted vocabulary has 21 types: 12 vision, 7 knowledge, and 2 experience.
+
+The category decision was revised on 2026-09-07 before the CLI release. This revision replaces the earlier assignment of both new types to knowledge. The CLI release and runtime routing changes remain pending.
 
 ### Three relations
 
@@ -66,7 +68,7 @@ Research is never `implements` and never `extends`. `rnd depends_on research` is
 
 ### Command surface
 
-The expert path `research` of `/archcore:plan` resolves to the producing instrument of the `research` type. `rnd` is reached by its own name, per the existing rule that a registry type name resolves to its producing instrument (`plugin/.archcore/plugin/command-surface-v2.spec`). This is a breaking change on a public surface and is announced as one in the plugin changelog.
+In the planned runtime update, the expert path `research` of `/archcore:plan` resolves to the producing instrument of the `research` type. `rnd` is reached by its own name, per the existing rule that a registry type name resolves to its producing instrument (`plugin/.archcore/plugin/command-surface-v2.spec`). This is a breaking change on a public surface and is announced as one in the plugin changelog.
 
 ### Known limitations, accepted on 2026-09-07
 
@@ -82,7 +84,7 @@ The expert path `research` of `/archcore:plan` resolves to the producing instrum
 ## Drawbacks
 
 - Two more types against "simplicity by constraint". Mitigated by the closing test: a verdict closes an `rnd`, coverage closes a `research`; a material is an `evidence`, a statement is not.
-- `research` and `doc` now share the knowledge category. The ownership test separates them: a truth the team controls and can verify by reading its own system is a `doc`; a truth outside the team's control, with dated provenance and gaps, is a `research`. The line stays soft for rosters of external things [assumption].
+- `research` and `doc` can overlap in subject despite their different categories. A `research` records an investigation with scope, dated sources, coverage, and gaps; a `doc` records reference information. The line stays soft for rosters of external things [assumption].
 - Three more relation names to learn. Mitigated by the three axes: structural, evidential, temporal.
 - A public surface change on the `research` expert path.
 
@@ -99,5 +101,5 @@ The expert path `research` of `/archcore:plan` resolves to the producing instrum
 1. Accept this RFC (vocabulary decision) — done 2026-09-07.
 2. Engine: templates, required sections, relation enum, server instructions, tests — the `cli` repository's plan.
 3. Runtime: the research track produces `research` or `rnd`; the gather gate may create `evidence` with an edge; the `research` expert path resolves to the new type; `/archcore:document` accepts both types — the `plugin` repository's plan.
-4. Shared context, after the engine release: `concepts/core-concepts`, `concepts/document-types-reference`, `concepts/relation-conventions`, `concepts/document-prose-canon`, `concepts/glossary`, and every count of types and relations updated; `concepts/evidence-conventions` added from the conventions above.
+4. Shared context: record the revised category decision before the engine release, as requested on 2026-09-07. Complete the remaining handoff after the release: `concepts/core-concepts`, `concepts/document-types-reference`, `concepts/relation-conventions`, `concepts/document-prose-canon`, `concepts/glossary`, and every count of types and relations updated; `concepts/evidence-conventions` added from the conventions above.
 5. Docs site: types page, relations page, plan command pages, precision checks, MCP tools reference, changelog — per `product/research-direction`.

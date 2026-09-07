@@ -70,13 +70,13 @@ Two properties matter more than the rest:
 
 A gate produces a file named `<slug>.<type>.md`. The type suffix is the whole classification mechanism:
 
-- The **type** (19 of them) selects the template and the section contract.
+- The **type** selects the template and the section contract.
 - The **category** — vision, knowledge, experience — is *derived* from the type. No command asks the user to choose a category.
 - The **directory** carries no meaning; layout is free-form.
 - The **status** starts at `draft`. Promotion to `accepted` is a separate explicit act, never a side effect of a gate, a hook, or an automated check.
-- **Relations** — `implements`, `extends`, `depends_on`, `related` — link the new document into the chain, so the next agent can walk back to the rationale.
+- **Relations** link the new document into the graph. The accepted seven-value vocabulary and its release boundary are described in `concepts/relation-conventions`.
 
-Every one of the 19 types is reachable through at least one command path. Full type reference: `concepts/document-types-reference`. Recommended cascades of types: `concepts/document-tracks`.
+The accepted vocabulary has 21 types, including `research` in vision and `evidence` in knowledge. The CLI release and runtime routes for those additions remain pending — `product/research-direction`. The current runtime catalog covers the preceding 19 types. Full type reference: `concepts/document-types-reference`. Recommended cascades of types: `concepts/document-tracks`.
 
 ## Store — one mutation surface
 

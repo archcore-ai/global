@@ -8,7 +8,9 @@ tags:
 
 ## Overview
 
-The four relation types are named in `concepts/core-concepts`. This document is the conventions layer: which direction an edge points, which edge each recurring pair takes, and what a missing edge costs. Relations are what turn a folder of documents into a graph an agent can walk, so a wrong direction is not cosmetic — it sends the next reader the wrong way.
+The seven accepted relation types are named in `concepts/core-concepts`. This document is the conventions layer: which direction an edge points, which edge each recurring pair takes, and what a missing edge costs. Relations are what turn a folder of documents into a graph an agent can walk, so a wrong direction is not cosmetic — it sends the next reader the wrong way.
+
+The CLI release that adds `supports`, `contradicts`, and `supersedes` remains pending — `product/research-direction`. Older binaries reject manifests containing these values; this change adds no downgrade conversion.
 
 ## Direction carries meaning
 
@@ -24,6 +26,11 @@ Every relation has a source and a target, and reversing them changes the claim. 
 | `extends` | One document builds on another that stays valid | rfc extends adr |
 | `depends_on` | One document requires another to make sense | plan depends_on adr |
 | `related` | General association, or two peers at the same level | mrd related brd |
+| `supports` | Material backs the target statement | evidence supports research |
+| `contradicts` | Challenger disputes the target statement | evidence contradicts research |
+| `supersedes` | Newer document replaces the older target | evidence supersedes evidence |
+
+`related`, `implements`, `extends`, and `depends_on` are structural. `supports` and `contradicts` are evidential. `supersedes` is temporal. The engine accepts these values independently of document type or category.
 
 `implements` and `extends` are easy to confuse. `implements` means the target stated a requirement and the source satisfies it. `extends` means the target stated a position and the source adds to it without replacing it.
 
@@ -67,7 +74,11 @@ Three conventions govern this one, and they are the ones most often broken. Same
 
 **Research**
 
-Research is never `implements`. An investigation does not fulfil a contract. Use `idea related rnd`, `plan depends_on rnd`, `adr depends_on rnd`.
+An `rnd` does not take `implements` by convention. Use `idea related rnd`, `plan depends_on rnd`, and `adr depends_on rnd`.
+
+A `research` takes neither `implements` nor `extends` by convention. Use `rnd depends_on research` for a decision-bound investigation that relies on territory discovery. Both types belong to vision. An `evidence` belongs to knowledge and can support or contradict either investigation.
+
+These patterns are authoring conventions, not type restrictions. Creating an evidential or temporal relation does not change a document's status or resolve a contradiction. Record the resolution in the disputed document's prose.
 
 ## Relations are never automatic
 
