@@ -10,7 +10,7 @@ tags:
 
 The seven accepted relation types are named in `concepts/core-concepts`. This document is the conventions layer: which direction an edge points, which edge each recurring pair takes, and what a missing edge costs. Relations are what turn a folder of documents into a graph an agent can walk, so a wrong direction is not cosmetic — it sends the next reader the wrong way.
 
-The CLI release that adds `supports`, `contradicts`, and `supersedes` remains pending — `product/research-direction`. Older binaries reject manifests containing these values; this change adds no downgrade conversion.
+The CLI adds `supports`, `contradicts`, and `supersedes` as of v0.8.3 (2026-09-07) — `product/research-direction`. Older binaries reject manifests containing these values; this change adds no downgrade conversion.
 
 ## Direction carries meaning
 

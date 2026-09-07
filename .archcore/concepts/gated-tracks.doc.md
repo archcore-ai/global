@@ -24,7 +24,7 @@ Do not confuse this with a **document track** (`concepts/document-tracks`), whic
 - A gate that finds its entry conditions already satisfied by existing documents or by the request text asks **zero** questions. A fully specified request runs question-free.
 - A document a gate produces is created as a **draft**. Promotion to accepted is a separate, explicitly confirmed step — never a side effect of a hook or a gate.
 - Track state lives inside the draft artifact, so an interrupted flow **resumes** in a later session at the earliest gate whose exit checks have not passed, without re-asking answered questions.
-- The current catalog covers the 19 document types that precede the research vocabulary expansion. Runtime routes for the newly accepted `research` and `evidence` types remain planned — `product/research-direction`.
+- As of plugin v0.8.3 the catalog covers all 21 document types on CLI v0.8.3 or later; on an older CLI the `research` track falls back to `rnd` and files no `evidence` — `product/research-direction`.
 
 ## The catalog
 
@@ -32,14 +32,14 @@ Do not confuse this with a **document track** (`concepts/document-tracks`), whic
 |-------|-------|---------|
 | `sdd` | frame → require → design → decompose | `plan` |
 | `requirements-cascade` | sources mode: mrd → brd → urd · ISO mode: brs → strs → syrs → srs | `plan` |
-| `research` | frame questions → gather evidence → conclude with a recommendation | `plan` |
+| `research` | frame → gather → conclude with scope coverage (`research`) or a recommendation (`rnd`); a standalone `evidence` enters at gather and exits there | `plan` (`research` path), `document` (`research`, `evidence`) |
 | `decision` | classify → adr or rfc → cascade (plus a resolution entry on an existing rfc) | `document`, callable from all |
 | `describe` | read the code → draft spec/doc/guide → clarify gaps | `document` |
 | `actualize` | scope the diff → verdict per finding → confirmed fixes | `review` |
 | `closeout` | verify the plan against the branch → merge the canon → transition statuses | `review` |
 | `experience` | detect a repeated pattern → offer a cpat or task-type | `review` |
 
-The current `research` track concludes an `rnd` with a recommendation. The planned runtime update distinguishes coverage-based `research` from recommendation-based `rnd` and permits reusable `evidence` records. The new classification is `research` in vision and `evidence` in knowledge; this accepted decision does not claim the routing change has shipped.
+The `research` track selects its product by the closing test: a request that names a pending decision or a candidate set closes on a recommendation (`rnd`); any other investigation closes on scope coverage (`research`). The gather gate may promote a material to a reusable `evidence` record. `/archcore:plan` exposes one `research` path and no `rnd` or `evidence` entry; `/archcore:document` files a ready `research` report or one `evidence` material. `research` is vision, `evidence` is knowledge. Plugin v0.8.3 (2026-09-07) ships these routes and removes the `rnd` and `evidence` entries that v0.8.2 had exposed on `plan` the same day; the release notes mark that removal as breaking.
 
 ## Two senses of track
 

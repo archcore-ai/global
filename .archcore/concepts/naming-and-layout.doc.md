@@ -26,7 +26,7 @@ Invalid slugs: `JWT_Strategy` (uppercase, underscore), `use postgres` (space), `
 
 A file with no recognized type segment is not rejected. The scanner keeps it and categorizes it as **knowledge**. Silence, not an error: an unreadable name costs the document its type, not its existence.
 
-The accepted vocabulary assigns `research` to vision and `evidence` to knowledge. Recognition of these suffixes requires the planned CLI release; an older scanner uses its unrecognized-type fallback. See `concepts/research-and-evidence-types`.
+The accepted vocabulary assigns `research` to vision and `evidence` to knowledge. The scanner recognizes these suffixes as of CLI v0.8.3 (2026-09-07); an older scanner uses its unrecognized-type fallback. See `concepts/research-and-evidence-types`.
 
 ## Directories mean nothing
 

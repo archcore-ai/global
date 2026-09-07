@@ -44,7 +44,7 @@ Statuses of `evidence` reuse the three existing values: `draft` — recorded by 
 
 `research` belongs to **vision** as territory discovery, alongside `rnd` and `mrd`. `evidence` belongs to **knowledge** as a reusable record of one material. `rnd` remains in vision. The accepted vocabulary has 21 types: 12 vision, 7 knowledge, and 2 experience.
 
-The category decision was revised on 2026-09-07 before the CLI release. This revision replaces the earlier assignment of both new types to knowledge. The CLI release and runtime routing changes remain pending.
+The category decision was revised on 2026-09-07 before the CLI release. This revision replaces the earlier assignment of both new types to knowledge. CLI v0.8.3 (2026-09-07) ships both types and the three relations; plugin v0.8.3 (2026-09-07) ships the runtime routes.
 
 ### Three relations
 
@@ -68,7 +68,9 @@ Research is never `implements` and never `extends`. `rnd depends_on research` is
 
 ### Command surface
 
-In the planned runtime update, the expert path `research` of `/archcore:plan` resolves to the producing instrument of the `research` type. `rnd` is reached by its own name, per the existing rule that a registry type name resolves to its producing instrument (`plugin/.archcore/plugin/command-surface-v2.spec`). This is a breaking change on a public surface and is announced as one in the plugin changelog.
+`/archcore:plan` exposes one research path, `research`. It names the research instrument, not a type: the instrument selects `rnd` when the request names a pending decision or a set of candidates to choose between, and `research` for any other investigation. `/archcore:document research` files a ready report by the same test — a report that ends in a recommendation is an `rnd`. `/archcore:document evidence` files one external material. Neither `rnd` nor `evidence` is an entry on `/archcore:plan`, and no command treats a bare registry type name as an entry; the argument hint of a command is its complete expert surface (`plugin/.archcore/plugin/command-surface-v2.spec`, `plugin/.archcore/plugin/research-runtime-category-and-evidence-entry.adr`).
+
+Revised on 2026-09-07 from the first cut, which resolved the `research` path to the `research` type and reached `rnd` by its own name through a type-name catch-all. That cut shipped as plugin v0.8.2 and was rejected the same day: it made the user choose the closing test before the investigation existed, and the catch-all exposed entries the argument hint did not show. Plugin v0.8.3 removes `plan rnd` and `plan evidence` and marks the removal as breaking in its release notes. The `research` path keeps its name, so users of v0.8.1 and earlier see no surface change; what changes is the document the path can produce.
 
 ### Known limitations, accepted on 2026-09-07
 
@@ -86,7 +88,7 @@ In the planned runtime update, the expert path `research` of `/archcore:plan` re
 - Two more types against "simplicity by constraint". Mitigated by the closing test: a verdict closes an `rnd`, coverage closes a `research`; a material is an `evidence`, a statement is not.
 - `research` and `doc` can overlap in subject despite their different categories. A `research` records an investigation with scope, dated sources, coverage, and gaps; a `doc` records reference information. The line stays soft for rosters of external things [assumption].
 - Three more relation names to learn. Mitigated by the three axes: structural, evidential, temporal.
-- A public surface change on the `research` expert path.
+- The `research` path of `/archcore:plan` can now produce an `rnd`; a user who wants an `rnd` for a request with no named decision must phrase the decision or the candidates, since `plan` has no type override.
 
 ## Alternatives
 
@@ -100,6 +102,6 @@ In the planned runtime update, the expert path `research` of `/archcore:plan` re
 
 1. Accept this RFC (vocabulary decision) — done 2026-09-07.
 2. Engine: templates, required sections, relation enum, server instructions, tests — the `cli` repository's plan.
-3. Runtime: the research track produces `research` or `rnd`; the gather gate may create `evidence` with an edge; the `research` expert path resolves to the new type; `/archcore:document` accepts both types — the `plugin` repository's plan.
-4. Shared context: record the revised category decision before the engine release, as requested on 2026-09-07. Complete the remaining handoff after the release: `concepts/core-concepts`, `concepts/document-types-reference`, `concepts/relation-conventions`, `concepts/document-prose-canon`, `concepts/glossary`, and every count of types and relations updated; `concepts/evidence-conventions` added from the conventions above.
+3. Runtime: the research track produces `research` or `rnd` by the closing test; the gather gate may create `evidence` with an edge; the `research` path of `/archcore:plan` names the instrument; `/archcore:document` accepts `research` and `evidence` — shipped in plugin v0.8.3 (2026-09-07).
+4. Shared context: record the revised category decision before the engine release, as requested on 2026-09-07 — done. Complete the remaining handoff after the release: `concepts/core-concepts`, `concepts/document-types-reference`, `concepts/relation-conventions`, `concepts/document-prose-canon`, `concepts/glossary`, and every count of types and relations updated; `concepts/evidence-conventions` added from the conventions above.
 5. Docs site: types page, relations page, plan command pages, precision checks, MCP tools reference, changelog — per `product/research-direction`.

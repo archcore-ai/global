@@ -10,7 +10,7 @@ tags:
 
 The detailed per-type reference and the "choosing the right type" selection guide for Archcore's 21 accepted document types. The high-level model (three virtual categories, `slug.type.md` naming, statuses, relations) lives in `concepts/core-concepts`; the multi-document flows in `concepts/document-tracks`; the Sources-vs-Specifications layering in `concepts/requirements-layers`. This document is the type-selection detail that all of those depend on. Category is derived from the type suffix, never from the directory. The prose profile and the line format each type carries are assigned by `concepts/document-prose-canon`.
 
-The accepted vocabulary includes `research` in vision and `evidence` in knowledge. The CLI release and runtime routing changes remain pending — `concepts/research-and-evidence-types` and `product/research-direction`.
+The accepted vocabulary includes `research` in vision and `evidence` in knowledge. CLI v0.8.3 (2026-09-07) ships both types and the three relations; plugin v0.8.3 (2026-09-07) ships the runtime routes. Vocabulary: `concepts/research-and-evidence-types`; rollout: `product/research-direction`.
 
 ## Vision types
 

@@ -10,7 +10,7 @@ tags:
 
 Canonical definitions of Archcore terms. Use these consistently across the ecosystem.
 
-The accepted vocabulary includes `research` in vision and `evidence` in knowledge. The CLI release and runtime routing changes remain pending — `concepts/research-and-evidence-types` and `product/research-direction`.
+The accepted vocabulary includes `research` in vision and `evidence` in knowledge. CLI v0.8.3 (2026-09-07) ships both types and the three relations; plugin v0.8.3 (2026-09-07) ships the runtime routes. Vocabulary: `concepts/research-and-evidence-types`; rollout: `product/research-direction`.
 
 ## Terms
 

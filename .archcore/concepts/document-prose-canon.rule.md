@@ -86,7 +86,7 @@ The profile decides the style. The format decides the parse.
 | `task-type` | Experience | STE | F3 | step <= 20 words |
 | `cpat` | Experience | ISO | F4 | Before and After both hold code |
 
-The `research` and `evidence` assignments follow the accepted vocabulary in `concepts/research-and-evidence-types`. `research` belongs to vision; `evidence` belongs to knowledge. Their engine release and runtime routing remain pending.
+The `research` and `evidence` assignments follow the accepted vocabulary in `concepts/research-and-evidence-types`. `research` belongs to vision; `evidence` belongs to knowledge. CLI v0.8.3 (2026-09-07) ships both types and the three relations; plugin v0.8.3 (2026-09-07) ships the runtime routes.
 
 The Sources track carries one more constraint that its three types share: formal ISO structure — a mission statement, an operational concept, a verification matrix — belongs to the specification layer, so it is a defect in `mrd`, `brd`, and `urd`.
 

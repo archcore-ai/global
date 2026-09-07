@@ -28,7 +28,7 @@ For picking the right *type* at each step, see `concepts/document-types-referenc
 
 ## Research vocabulary
 
-The accepted vocabulary adds `research` in vision and `evidence` in knowledge — `concepts/research-and-evidence-types`. The CLI release and runtime routing remain pending.
+The accepted vocabulary adds `research` in vision and `evidence` in knowledge — `concepts/research-and-evidence-types`. CLI v0.8.3 (2026-09-07) ships both types and the three relations; plugin v0.8.3 (2026-09-07) ships the runtime routes.
 
 `evidence supports research` links a reusable material to a territory investigation. `rnd depends_on research` links a decision-bound investigation to that territory. These are document conventions, not additional execution gates; the existing Product flow remains valid.
 

@@ -12,7 +12,7 @@ Add `rnd` as a 19th canonical document type in the `vision` category: a single, 
 
 This is a change to the shared vocabulary, so the proposal lives at the `global` level. Implementation-grade detail (templates, validation, tests) lives with each tool (cli, plugin) once this is accepted.
 
-The accepted 2026-09-07 RFC `concepts/research-and-evidence-types` adds coverage-based `research` in vision and material records as `evidence` in knowledge; `rnd` scope is unchanged, and the new CLI release remains pending.
+The accepted 2026-09-07 RFC `concepts/research-and-evidence-types` adds coverage-based `research` in vision and material records as `evidence` in knowledge; `rnd` scope is unchanged. CLI v0.8.3 (2026-09-07) ships the vocabulary. Plugin v0.8.2 exposed `rnd` by its own name on `/archcore:plan`; plugin v0.8.3 (same day) removed that entry: the `research` path selects `rnd` when the request names a pending decision or a candidate set — `concepts/research-and-evidence-types`, Command surface.
 
 ## Motivation
 

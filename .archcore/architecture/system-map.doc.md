@@ -76,7 +76,7 @@ A gate produces a file named `<slug>.<type>.md`. The type suffix is the whole cl
 - The **status** starts at `draft`. Promotion to `accepted` is a separate explicit act, never a side effect of a gate, a hook, or an automated check.
 - **Relations** link the new document into the graph. The accepted seven-value vocabulary and its release boundary are described in `concepts/relation-conventions`.
 
-The accepted vocabulary has 21 types, including `research` in vision and `evidence` in knowledge. The CLI release and runtime routes for those additions remain pending — `product/research-direction`. The current runtime catalog covers the preceding 19 types. Full type reference: `concepts/document-types-reference`. Recommended cascades of types: `concepts/document-tracks`.
+The accepted vocabulary has 21 types, including `research` in vision and `evidence` in knowledge. CLI v0.8.3 and plugin v0.8.3 (both 2026-09-07) ship them — `product/research-direction`. On an older CLI the runtime falls back to the preceding 19 types. Full type reference: `concepts/document-types-reference`. Recommended cascades of types: `concepts/document-tracks`.
 
 ## Store — one mutation surface
 

@@ -47,7 +47,7 @@ in Git. Kiro has the richest feature surface and gives up portability. OpenSpec 
 lifecycle and gives up typing and relations. ByteRover has typing, relations, and lifecycle
 and is a memory store rather than an authored document set.
 
-**Nineteen document types with section contracts.** Competitors ship three to five artifact
+**Twenty-one document types with section contracts.** Competitors ship three to five artifact
 shapes — usually requirements, design, tasks. Archcore's type set spans decisions, rules,
 specs, guides, requirements cascades, and experience patterns, and the type selects the
 template and the section contract. No verified competitor types knowledge this finely.
