@@ -426,6 +426,61 @@
       "source": "product/layer-1-command-surface.rfc.md",
       "target": "architecture/engine-runtime-boundary.adr.md",
       "type": "related"
+    },
+    {
+      "source": "product/research-direction.plan.md",
+      "target": "concepts/rnd-research-document-type.rfc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/research-direction.plan.md",
+      "target": "architecture/engine-runtime-boundary.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/research-direction.plan.md",
+      "target": "architecture/one-product-two-entry-points.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/research-direction.plan.md",
+      "target": "concepts/research-and-evidence-types.rfc.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/research-direction.plan.md",
+      "target": "architecture/store-not-method-engine.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/research-direction.plan.md",
+      "target": "product/research-process-deferred.idea.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/research-and-evidence-types.rfc.md",
+      "target": "concepts/rnd-research-document-type.rfc.md",
+      "type": "extends"
+    },
+    {
+      "source": "concepts/research-and-evidence-types.rfc.md",
+      "target": "architecture/store-not-method-engine.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/research-process-deferred.idea.md",
+      "target": "concepts/research-and-evidence-types.rfc.md",
+      "type": "related"
+    },
+    {
+      "source": "architecture/store-not-method-engine.adr.md",
+      "target": "architecture/engine-runtime-boundary.adr.md",
+      "type": "related"
+    },
+    {
+      "source": "product/design-principles.doc.md",
+      "target": "architecture/store-not-method-engine.adr.md",
+      "type": "related"
     }
   ]
 }
