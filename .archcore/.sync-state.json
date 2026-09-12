@@ -481,6 +481,111 @@
       "source": "product/design-principles.doc.md",
       "target": "architecture/store-not-method-engine.adr.md",
       "type": "related"
+    },
+    {
+      "source": "product/optional-integration-ecosystem.rnd.md",
+      "target": "architecture/store-not-method-engine.adr.md",
+      "type": "related"
+    },
+    {
+      "source": "product/optional-integration-ecosystem.rnd.md",
+      "target": "architecture/engine-runtime-boundary.adr.md",
+      "type": "related"
+    },
+    {
+      "source": "product/optional-integration-ecosystem.rnd.md",
+      "target": "product/positioning-vs-alternatives.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/optional-integration-ecosystem.rnd.md",
+      "target": "product/adjacent-category-terms.adr.md",
+      "type": "related"
+    },
+    {
+      "source": "product/integration-catalog-distribution.rnd.md",
+      "target": "product/optional-integration-ecosystem.rnd.md",
+      "type": "related"
+    },
+    {
+      "source": "product/integration-catalog-distribution.rnd.md",
+      "target": "product/seo-information-architecture.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "product/integration-catalog-distribution.rnd.md",
+      "target": "web/static-hosting-github-pages.adr.md",
+      "type": "related"
+    },
+    {
+      "source": "product/integration-catalog-on-main-site.adr.md",
+      "target": "product/integration-catalog-distribution.rnd.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/integration-catalog-on-main-site.adr.md",
+      "target": "web/static-hosting-github-pages.adr.md",
+      "type": "related"
+    },
+    {
+      "source": "product/seo-information-architecture.doc.md",
+      "target": "product/integration-catalog-on-main-site.adr.md",
+      "type": "implements"
+    },
+    {
+      "source": "architecture/install-responsibility.rule.md",
+      "target": "architecture/one-product-two-entry-points.adr.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "architecture/install-responsibility.rule.md",
+      "target": "architecture/plugin-cli-compatibility.rule.md",
+      "type": "related"
+    },
+    {
+      "source": "architecture/install-responsibility.rule.md",
+      "target": "architecture/supported-ai-hosts.doc.md",
+      "type": "related"
+    },
+    {
+      "source": "telemetry/analytics-ingestion.rule.md",
+      "target": "web/static-hosting-github-pages.adr.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/content-kind-ownership.rule.md",
+      "target": "concepts/document-types-reference.doc.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "concepts/content-kind-ownership.rule.md",
+      "target": "concepts/document-prose-canon.rule.md",
+      "type": "related"
+    },
+    {
+      "source": "product/integration-recipes.spec.md",
+      "target": "product/integration-catalog-on-main-site.adr.md",
+      "type": "implements"
+    },
+    {
+      "source": "product/author-an-integration-recipe.task-type.md",
+      "target": "product/integration-recipes.spec.md",
+      "type": "depends_on"
+    },
+    {
+      "source": "product/integration-recipes.spec.md",
+      "target": "product/optional-integration-ecosystem.rnd.md",
+      "type": "related"
+    },
+    {
+      "source": "product/integration-recipes.spec.md",
+      "target": "product/integration-catalog-distribution.rnd.md",
+      "type": "related"
+    },
+    {
+      "source": "concepts/caps-decompose-over-truncate.rule.md",
+      "target": "concepts/content-kind-ownership.rule.md",
+      "type": "related"
     }
   ]
 }

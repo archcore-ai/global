@@ -74,6 +74,8 @@ Pillar meta descriptions:
 
 ### Integration page formula
 
+This formula covers host pages at their existing root URLs. Integration recipe pages use the separate catalog ownership below.
+
 Every host gets its own page.
 
 - Title pattern: `Context Engineering for {Agent} — Archcore`. Use `Spec-Driven Development with {Agent} — Archcore` where that host's search intent supports it. Titles are not identical across integration pages.
@@ -82,6 +84,27 @@ Every host gets its own page.
 - Required sections: What Archcore adds to {Agent} · Installation · Project context · Spec-driven development · Automatic context and hooks · MCP · Worked examples · Comparison with the host's native instruction or memory features · FAQ.
 
 The host set stated on an integration page follows the shipped support matrix, not this document. Landing holds one source for that matrix; docs and repository taglines follow it.
+
+### Integration recipe catalog
+
+Accepted on 2026-09-08; planned implementation. The catalog lives at archcore.ai/integrations/ in landing's Astro content build. It serves discovery and evaluation of Archcore + selected tools. Short setup instructions stay on recipe pages; docs.archcore.ai carries additional setup, update, removal, and troubleshooting guidance.
+
+| Query cluster or reader task | Selected owner |
+|---|---|
+| Find an Archcore integration for an existing tool setup | archcore.ai/integrations/ |
+| Use Superpowers with Archcore project context | archcore.ai/integrations/superpowers/ |
+| Configure Archcore in a supported AI host | Existing root host pages and their linked operational docs |
+| Diagnose or maintain an installed recipe | Distinct operational docs where the catalog's short instructions do not cover the task |
+
+Archcore + Superpowers is the first pilot. Other combinations receive pages when they have distinct guidance; these entries do not establish current compatibility or a publication date.
+
+Recipe pages explain the problem, each tool's contribution, supported entry points, artifact ownership, configuration effect, and exact verification scope. They link to one versioned source for installable instructions.
+
+The catalog targets users across harnesses. A named host guide is a setup shortcut; tested host/model environments describe evidence coverage. Required capabilities and a connection path for an unrecognized harness belong on the recipe page.
+
+Existing host pages keep their query ownership. A docs page and a catalog page can each have a canonical URL when they answer different tasks. Independently authored copies of the same recipe instructions and generated tool × host × version pages are outside the selected approach. Host-specific instruction exports can derive from the same versioned source.
+
+The catalog choice rests on the product journey and existing build, not on an established ranking advantage over the docs subdomain.
 
 ### Title and description rules
 
